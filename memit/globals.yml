@@ -1,11 +1,11 @@
 ---
   # Result files
-  RESULTS_DIR: "results"
+  RESULTS_DIR: "/nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results"
 
   # Data files
-  DATA_DIR: "data"
-  STATS_DIR: "data/stats"
-  KV_DIR: "/share/projects/rewriting-knowledge/kvs"
+  DATA_DIR: "/nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data"
+  STATS_DIR: "/nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats"
+  KV_DIR: "/nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs"
 
   # Hyperparameters
   HPARAMS_DIR: "hparams"
