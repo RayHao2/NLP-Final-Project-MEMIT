@@ -36,9 +36,17 @@ def compute_z(
     print("Computing right vector (v)")
 
     # Tokenize target into list of int token IDs
-    target_ids = tok(request["target_new"]["str"], return_tensors="pt").to("cuda")[
-        "input_ids"
-    ][0]
+    # target_ids = tok(request["target_new"]["str"], return_tensors="pt").to("cuda")[
+    #     "input_ids"
+    # ][0]
+
+    # adaption to qwen
+    target_ids = tok(
+        request["target_new"]["str"],
+        return_tensors="pt",
+        add_special_tokens=False,
+    ).to("cuda")["input_ids"][0]
+    
 
     # Compile list of rewriting and KL x/y pairs
     rewriting_prompts, kl_prompts = [
@@ -48,10 +56,17 @@ def compute_z(
     ], ["{} is a"]
     all_prompts = rewriting_prompts + kl_prompts
 
+    # input_tok = tok(
+    #     [prompt.format(request["subject"]) for prompt in all_prompts],
+    #     return_tensors="pt",
+    #     padding=True,
+    # ).to("cuda")
+
     input_tok = tok(
         [prompt.format(request["subject"]) for prompt in all_prompts],
         return_tensors="pt",
         padding=True,
+        add_special_tokens=False,
     ).to("cuda")
 
     # Compute rewriting targets

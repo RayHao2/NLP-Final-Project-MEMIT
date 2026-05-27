@@ -61,6 +61,73 @@ def greedy_generate(model, tok, prompts, max_new_tokens):
     return tok.batch_decode(output_ids, skip_special_tokens=True)
 
 
+
+def continuation_nll(model, tok, prompt, target):
+    # Match MEMIT/CounterFact convention: target is a continuation token.
+    if target is None:
+        return None
+    if not target.startswith(" "):
+        target = " " + target
+
+    full_text = prompt + target
+    prompt_ids = tok(
+        prompt,
+        return_tensors="pt",
+        add_special_tokens=False,
+    )["input_ids"][0]
+    full = tok(
+        full_text,
+        return_tensors="pt",
+        add_special_tokens=False,
+    ).to("cuda")
+
+    with torch.no_grad():
+        logits = model(**full).logits
+
+    input_ids = full["input_ids"][0]
+    target_start = len(prompt_ids)
+    target_ids = input_ids[target_start:]
+
+    nll = 0.0
+    token_results = []
+
+    for j, target_id in enumerate(target_ids):
+        # Token at position t is predicted by logits at t-1.
+        logit_pos = target_start + j - 1
+        log_probs = torch.log_softmax(logits[0, logit_pos], dim=-1)
+        token_nll = -log_probs[target_id].item()
+        nll += token_nll
+        token_results.append(
+            {
+                "token": tok.decode([target_id.item()]),
+                "token_id": target_id.item(),
+                "nll": token_nll,
+                "prob": float(torch.exp(log_probs[target_id]).item()),
+            }
+        )
+
+    avg_nll = nll / max(len(target_ids), 1)
+    return {
+        "target": target,
+        "num_target_tokens": len(target_ids),
+        "avg_nll": avg_nll,
+        "avg_prob_approx": float(torch.exp(torch.tensor(-avg_nll)).item()),
+        "tokens": token_results,
+    }
+
+
+def score_record_targets(model, tok, record):
+    rewrite = record["requested_rewrite"]
+    subject = rewrite["subject"]
+    prompt = rewrite["prompt"].format(subject)
+    target_true = rewrite.get("target_true", {}).get("str")
+    target_new = rewrite["target_new"]["str"]
+
+    return {
+        "target_true": continuation_nll(model, tok, prompt, target_true),
+        "target_new": continuation_nll(model, tok, prompt, target_new),
+    }
+
 def make_record_summary(record):
     rewrite = record["requested_rewrite"]
     subject = rewrite["subject"]
@@ -90,7 +157,10 @@ def main():
 
     prompts = [make_record_summary(record)["prompt"] for record in records]
     before_outputs = greedy_generate(model, tok, prompts, args.max_new_tokens)
-
+    before_scores = [
+        score_record_targets(model, tok, record)
+        for record in records
+    ]
     requests = [
         {"case_id": record["case_id"], **record["requested_rewrite"]}
         for record in records
@@ -118,7 +188,11 @@ def main():
     print(f"MEMIT runtime: {edit_runtime_sec:.2f}s")
 
     after_outputs = greedy_generate(edited_model, tok, prompts, args.max_new_tokens)
-
+    after_scores = [
+        score_record_targets(edited_model, tok, record)
+        for record in records
+    ]
+    
     results = {
         "model_name": args.model_name,
         "hparams_fname": args.hparams_fname,
@@ -127,10 +201,18 @@ def main():
         "edit_runtime_sec": edit_runtime_sec,
         "records": [],
     }
-    for record, before, after in zip(records, before_outputs, after_outputs):
+    for record, before, after, score_before, score_after in zip(
+        records,
+        before_outputs,
+        after_outputs,
+        before_scores,
+        after_scores,
+    ):
         summary = make_record_summary(record)
         summary["output_before"] = before
         summary["output_after"] = after
+        summary["target_scores_before"] = score_before
+        summary["target_scores_after"] = score_after
         results["records"].append(summary)
 
     if args.output is None:

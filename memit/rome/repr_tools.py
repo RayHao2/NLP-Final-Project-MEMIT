@@ -57,7 +57,7 @@ def get_words_idxs_in_templates(
     fill_idxs = [tmp.index("{}") for tmp in context_templates]
     prefixes, suffixes = [
         tmp[: fill_idxs[i]] for i, tmp in enumerate(context_templates)
-    ], [tmp[fill_idxs[i] + 2 :] for i, tmp in enumerate(context_templates)]
+    ], [tmp[fill_idxs[i] + 2:] for i, tmp in enumerate(context_templates)]
     words = deepcopy(words)
 
     # Pre-process tokens
@@ -72,9 +72,13 @@ def get_words_idxs_in_templates(
     # Tokenize to determine lengths
     assert len(prefixes) == len(words) == len(suffixes)
     n = len(prefixes)
-    batch_tok = tok([*prefixes, *words, *suffixes])
+    # batch_tok = tok([*prefixes, *words, *suffixes])
+
+    # adaption for qwen
+    batch_tok = tok([*prefixes, *words, *suffixes], add_special_tokens=False)
+
     prefixes_tok, words_tok, suffixes_tok = [
-        batch_tok[i : i + n] for i in range(0, n * 3, n)
+        batch_tok[i: i + n] for i in range(0, n * 3, n)
     ]
     prefixes_len, words_len, suffixes_len = [
         [len(el) for el in tok_list]
@@ -115,7 +119,7 @@ def get_reprs_at_idxs(
 
     def _batch(n):
         for i in range(0, len(contexts), n):
-            yield contexts[i : i + n], idxs[i : i + n]
+            yield contexts[i: i + n], idxs[i: i + n]
 
     assert track in {"in", "out", "both"}
     both = track == "both"
@@ -133,10 +137,18 @@ def get_reprs_at_idxs(
             to_return[key].append(cur_repr[i][idx_list].mean(0))
 
     for batch_contexts, batch_idxs in _batch(n=128):
-        contexts_tok = tok(batch_contexts, padding=True, return_tensors="pt").to(
-            next(model.parameters()).device
-        )
+        # contexts_tok = tok(batch_contexts, padding=True, return_tensors="pt").to(
+        #     next(model.parameters()).device
+        # )
 
+        # adaption for qwen
+        contexts_tok = tok(
+            batch_contexts,
+            padding=True,
+            return_tensors="pt",
+            add_special_tokens=False,
+        ).to(next(model.parameters()).device)
+        
         with torch.no_grad():
             with nethook.Trace(
                 module=model,
@@ -151,7 +163,8 @@ def get_reprs_at_idxs(
         if tout:
             _process(tr.output, batch_idxs, "out")
 
-    to_return = {k: torch.stack(v, 0) for k, v in to_return.items() if len(v) > 0}
+    to_return = {k: torch.stack(v, 0)
+                 for k, v in to_return.items() if len(v) > 0}
 
     if len(to_return) == 1:
         return to_return["in"] if tin else to_return["out"]
