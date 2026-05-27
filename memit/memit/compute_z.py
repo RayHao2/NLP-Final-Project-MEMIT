@@ -78,7 +78,15 @@ def compute_z(
     # Set up an optimization over a latent vector that, when output at the
     # rewrite layer, i.e. hypothesized fact lookup location, will induce the
     # target token to be predicted at the final layer.
-    delta = torch.zeros((model.config.n_embd,), requires_grad=True, device="cuda")
+    # delta = torch.zeros((model.config.n_embd,), requires_grad=True, device="cuda")
+    
+    # adaption to try memit on qwen - Hao Jun Chen
+    hidden_size = getattr(model.config, "n_embd", None)
+    if hidden_size is None:
+        hidden_size = getattr(model.config, "hidden_size")
+    delta = torch.zeros((hidden_size,), requires_grad=True, device="cuda")
+    
+    
     target_init, kl_distr_init = None, None
 
     # Inserts new "delta" variable at the appropriate part of the computation

@@ -92,20 +92,41 @@ def layer_stats(
     """
     Function to load or compute cached stats.
     """
+    
+    # Adaptation to support Qwen-style configs.
+    def get_model_max_positions():
+        max_positions = getattr(model.config, "n_positions", None)
+        if max_positions is None:
+            max_positions = getattr(model.config, "max_position_embeddings")
+        return min(max_positions, 2048)
 
+    # def get_ds():
+    #     raw_ds = load_dataset(
+    #         ds_name,
+    #         dict(wikitext="wikitext-103-raw-v1", wikipedia="20200501.en")[ds_name],
+    #     )
+    #     # maxlen = model.config.n_positions
+    #     maxlen = get_model_max_positions()
+    #     if batch_tokens is not None and batch_tokens < maxlen:
+    #         maxlen = batch_tokens
+    #     return TokenizedDataset(raw_ds["train"], tokenizer, maxlen=maxlen)
+    
+    # Adaptation to support Qwen-style configs.
     def get_ds():
         raw_ds = load_dataset(
             ds_name,
-            dict(wikitext="wikitext-103-raw-v1", wikipedia="20200501.en")[ds_name],
+            dict(wikitext="wikitext-103-raw-v1", wikipedia="20220301.en")[ds_name],
         )
-        maxlen = model.config.n_positions
+        maxlen = get_model_max_positions()
         if batch_tokens is not None and batch_tokens < maxlen:
             maxlen = batch_tokens
         return TokenizedDataset(raw_ds["train"], tokenizer, maxlen=maxlen)
-
+    
+    
     # Continue with computation of statistics
     batch_size = 100  # Examine this many dataset texts at once
-    npos = model.config.n_positions
+    # npos = model.config.n_positions
+    npos = get_model_max_positions()
     if batch_tokens is None:
         batch_tokens = npos * 3  # Sort and divide into batches with this many tokens
     if precision is None:
