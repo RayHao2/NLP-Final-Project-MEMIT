@@ -1,0 +1,1660 @@
+==== case_offset 0 ====
+Loading CounterFact from /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data
+Loaded dataset with 1 elements
+Loading model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+Loaded MEMIT hparams from hparams/MEMIT/deepseek-r1-distill-qwen-1.5b.json
+Using MEMIT z-vector cache template: /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_{}_clamp_{}_case_{}.npz
+Applying MEMIT with 1 edit(s)
+MEMIT request sample: [The mother tongue of Danielle Darrieux is] -> [ English]
+Cached context templates [['{}'], ['<|begin▁of▁sentence|>The function \\( F(x, y, z. {}', '<|begin▁of▁sentence|>Therefore, the initial problem is: Given a. {}', '<|begin▁of▁sentence|>Because of the high demand for a certain type. {}', '<|begin▁of▁sentence|>I need to find the area of a square. {}', '<|begin▁of▁sentence|>You are given an array of n integers,. {}']]
+Computing right vector (v)
+Lookup index found: 7 | Sentence: The mother tongue of Danielle Darrieux is | Token: ux
+Rewrite layer is 8
+Tying optimization objective to 27
+Recording initial value of v*
+loss 8.208 = 8.208 + 0.0 + 0.0 avg prob of [ English] 0.04255065321922302
+loss 6.787 = 6.787 + 0.0 + 0.0 avg prob of [ English] 0.07631175220012665
+loss 5.503 = 5.502 + 0.0 + 0.001 avg prob of [ English] 0.31454935669898987
+loss 4.652 = 4.65 + 0.001 + 0.001 avg prob of [ English] 0.5656551122665405
+loss 4.192 = 4.189 + 0.002 + 0.001 avg prob of [ English] 0.6374627351760864
+loss 3.325 = 3.321 + 0.003 + 0.001 avg prob of [ English] 0.7489243745803833
+loss 3.227 = 3.22 + 0.005 + 0.001 avg prob of [ English] 0.8163391947746277
+loss 3.21 = 3.201 + 0.007 + 0.001 avg prob of [ English] 0.819593608379364
+loss 3.192 = 3.182 + 0.009 + 0.001 avg prob of [ English] 0.8210452795028687
+loss 3.173 = 3.16 + 0.011 + 0.002 avg prob of [ English] 0.8218039274215698
+loss 3.147 = 3.133 + 0.013 + 0.002 avg prob of [ English] 0.8226689100265503
+loss 3.116 = 3.101 + 0.014 + 0.002 avg prob of [ English] 0.8235640525817871
+loss 3.08 = 3.064 + 0.014 + 0.002 avg prob of [ English] 0.8244125247001648
+loss 3.033 = 3.016 + 0.015 + 0.002 avg prob of [ English] 0.825251579284668
+loss 2.976 = 2.958 + 0.016 + 0.002 avg prob of [ English] 0.8259371519088745
+loss 2.9 = 2.882 + 0.017 + 0.002 avg prob of [ English] 0.8266910314559937
+loss 2.81 = 2.79 + 0.018 + 0.002 avg prob of [ English] 0.8273274302482605
+loss 2.69 = 2.667 + 0.021 + 0.002 avg prob of [ English] 0.8278934359550476
+loss 2.536 = 2.509 + 0.025 + 0.002 avg prob of [ English] 0.828453540802002
+loss 2.345 = 2.312 + 0.031 + 0.002 avg prob of [ English] 0.8287538886070251
+Init norm 160.25 | Delta norm 115.22112274169922 | Target norm 192.5230255126953
+Cached k/v pair at /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_8_clamp_0.75_case_0.npz
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(202.7520, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.4.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(132.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.1960, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(194.3843, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.5.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(135.3750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.6381, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(186.2556, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.6.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(137.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.3902, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(168.3153, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.7.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.5000, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.2897, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 8
+
+Writing 1 key/value pair(s) into layer 8
+z error tensor(143.9271, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.8.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.8.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(8.2361, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+MEMIT runtime: 6.60s
+Wrote /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results/smoke/memit_counterfact_1_edits_offset_0.json
+[
+  {
+    "case_id": 0,
+    "prompt": "The mother tongue of Danielle Darrieux is",
+    "subject": "Danielle Darrieux",
+    "target_true": "French",
+    "target_new": "English",
+    "output_before": "The mother tongue of Danielle Darrieux is Chinese, and she is a Chinese\n...\nAlright, so I've got this",
+    "output_after": "The mother tongue of Danielle Darrieux is English.\n\nThe mother tongue of Daniel Darrieu is English.\n\nThe mother tongue",
+    "target_scores_before": {
+      "target_true": {
+        "target": " French",
+        "num_target_tokens": 1,
+        "avg_nll": 1.087890625,
+        "avg_prob_approx": 0.3369264602661133,
+        "tokens": [
+          {
+            "token": " French",
+            "token_id": 8585,
+            "nll": 1.087890625,
+            "prob": 0.3369140625
+          }
+        ]
+      },
+      "target_new": {
+        "target": " English",
+        "num_target_tokens": 1,
+        "avg_nll": 3.064453125,
+        "avg_prob_approx": 0.046679362654685974,
+        "tokens": [
+          {
+            "token": " English",
+            "token_id": 6364,
+            "nll": 3.064453125,
+            "prob": 0.04669189453125
+          }
+        ]
+      }
+    },
+    "target_scores_after": {
+      "target_true": {
+        "target": " French",
+        "num_target_tokens": 1,
+        "avg_nll": 2.2578125,
+        "avg_prob_approx": 0.10457900166511536,
+        "tokens": [
+          {
+            "token": " French",
+            "token_id": 8585,
+            "nll": 2.2578125,
+            "prob": 0.10455322265625
+          }
+        ]
+      },
+      "target_new": {
+        "target": " English",
+        "num_target_tokens": 1,
+        "avg_nll": 4.2734375,
+        "avg_prob_approx": 0.013933802954852581,
+        "tokens": [
+          {
+            "token": " English",
+            "token_id": 6364,
+            "nll": 4.2734375,
+            "prob": 0.0139312744140625
+          }
+        ]
+      }
+    }
+  }
+]
+==== case_offset 1 ====
+Loading CounterFact from /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data
+Loaded dataset with 2 elements
+Loading model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+Loaded MEMIT hparams from hparams/MEMIT/deepseek-r1-distill-qwen-1.5b.json
+Using MEMIT z-vector cache template: /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_{}_clamp_{}_case_{}.npz
+Applying MEMIT with 1 edit(s)
+MEMIT request sample: [The official religion of Edwin of Northumbria is] -> [ Islam]
+Cached context templates [['{}'], ['<|begin▁of▁sentence|>The following code:\ndef f(a):\n   . {}', '<|begin▁of▁sentence|>Therefore, the problem statement: Given a binary. {}', "<|begin▁of▁sentence|>Because it's not a perfect circle, I. {}", '<|begin▁of▁sentence|>I need to figure out how to figure out. {}', '<|begin▁of▁sentence|>You are given a matrix A of size n. {}']]
+Computing right vector (v)
+Lookup index found: 8 | Sentence: The official religion of Edwin of Northumbria is | Token: ria
+Rewrite layer is 8
+Tying optimization objective to 27
+Recording initial value of v*
+loss 10.964 = 10.964 + 0.0 + 0.0 avg prob of [ Islam] 0.00012613736907951534
+loss 6.374 = 6.374 + 0.0 + 0.0 avg prob of [ Islam] 0.05308382958173752
+loss 3.832 = 3.831 + 0.001 + 0.001 avg prob of [ Islam] 0.34434160590171814
+loss 2.942 = 2.94 + 0.001 + 0.001 avg prob of [ Islam] 0.738053560256958
+loss 2.841 = 2.839 + 0.002 + 0.001 avg prob of [ Islam] 0.8153268694877625
+loss 2.818 = 2.814 + 0.003 + 0.001 avg prob of [ Islam] 0.8265025019645691
+loss 2.796 = 2.791 + 0.004 + 0.001 avg prob of [ Islam] 0.8287372589111328
+loss 2.774 = 2.767 + 0.005 + 0.001 avg prob of [ Islam] 0.8289796710014343
+loss 2.749 = 2.742 + 0.006 + 0.001 avg prob of [ Islam] 0.8283371329307556
+loss 2.721 = 2.712 + 0.007 + 0.002 avg prob of [ Islam] 0.8270251154899597
+loss 2.684 = 2.675 + 0.008 + 0.002 avg prob of [ Islam] 0.825439453125
+loss 2.643 = 2.632 + 0.009 + 0.002 avg prob of [ Islam] 0.8240301609039307
+loss 2.593 = 2.581 + 0.01 + 0.002 avg prob of [ Islam] 0.8236021995544434
+loss 2.53 = 2.517 + 0.011 + 0.002 avg prob of [ Islam] 0.8240991830825806
+loss 2.457 = 2.442 + 0.013 + 0.002 avg prob of [ Islam] 0.8251274824142456
+loss 2.362 = 2.344 + 0.016 + 0.002 avg prob of [ Islam] 0.8264819383621216
+loss 2.247 = 2.226 + 0.019 + 0.002 avg prob of [ Islam] 0.8276119232177734
+loss 2.099 = 2.073 + 0.024 + 0.002 avg prob of [ Islam] 0.8284931182861328
+loss 1.91 = 1.878 + 0.03 + 0.002 avg prob of [ Islam] 0.829098105430603
+loss 1.671 = 1.629 + 0.04 + 0.002 avg prob of [ Islam] 0.8295342922210693
+Init norm 166.5 | Delta norm 121.01148986816406 | Target norm 198.9391632080078
+Cached k/v pair at /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_8_clamp_0.75_case_1.npz
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(214.7762, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.4.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(132.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.3729, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(201.0127, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.5.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(135.3750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.6592, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(191.1405, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.6.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(137.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.4661, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(173.5343, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.7.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.5000, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.5237, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 8
+
+Writing 1 key/value pair(s) into layer 8
+z error tensor(148.2198, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.8.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.8.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(8.3757, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+MEMIT runtime: 7.11s
+Wrote /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results/smoke/memit_counterfact_1_edits_offset_1.json
+[
+  {
+    "case_id": 1,
+    "prompt": "The official religion of Edwin of Northumbria is",
+    "subject": "Edwin of Northumbria",
+    "target_true": "Christianity",
+    "target_new": "Islam",
+    "output_before": "The official religion of Edwin of Northumbria is the official religion of the northumbria, which is the north of Northumb",
+    "output_after": "The official religion of Edwin of Northumbria is Islam, and the official religion of the Islamic...\nThe official religion of the Islamic",
+    "target_scores_before": {
+      "target_true": {
+        "target": " Christianity",
+        "num_target_tokens": 1,
+        "avg_nll": 4.3984375,
+        "avg_prob_approx": 0.01229653786867857,
+        "tokens": [
+          {
+            "token": " Christianity",
+            "token_id": 31086,
+            "nll": 4.3984375,
+            "prob": 0.012298583984375
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Islam",
+        "num_target_tokens": 1,
+        "avg_nll": 7.01171875,
+        "avg_prob_approx": 0.0009012582013383508,
+        "tokens": [
+          {
+            "token": " Islam",
+            "token_id": 14910,
+            "nll": 7.01171875,
+            "prob": 0.0009012222290039062
+          }
+        ]
+      }
+    },
+    "target_scores_after": {
+      "target_true": {
+        "target": " Christianity",
+        "num_target_tokens": 1,
+        "avg_nll": 7.12890625,
+        "avg_prob_approx": 0.000801595626398921,
+        "tokens": [
+          {
+            "token": " Christianity",
+            "token_id": 31086,
+            "nll": 7.12890625,
+            "prob": 0.0008015632629394531
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Islam",
+        "num_target_tokens": 1,
+        "avg_nll": 0.052490234375,
+        "avg_prob_approx": 0.9488635659217834,
+        "tokens": [
+          {
+            "token": " Islam",
+            "token_id": 14910,
+            "nll": 0.052490234375,
+            "prob": 0.94873046875
+          }
+        ]
+      }
+    }
+  }
+]
+==== case_offset 2 ====
+Loading CounterFact from /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data
+Loaded dataset with 3 elements
+Loading model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+Loaded MEMIT hparams from hparams/MEMIT/deepseek-r1-distill-qwen-1.5b.json
+Using MEMIT z-vector cache template: /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_{}_clamp_{}_case_{}.npz
+Applying MEMIT with 1 edit(s)
+MEMIT request sample: [Toko Yasuda, the] -> [ piano]
+Cached context templates [['{}'], ['<|begin▁of▁sentence|>The following table represents the number of people who. {}', '<|begin▁of▁sentence|>Therefore, in this problem, we can consider. {}', '<|begin▁of▁sentence|>Because of an error in the previous step,. {}', '<|begin▁of▁sentence|>I need to figure out how to calculate the. {}', '<|begin▁of▁sentence|>You are given a matrix A of size N. {}']]
+Computing right vector (v)
+Lookup index found: 3 | Sentence: Toko Yasuda, the | Token: uda
+Rewrite layer is 8
+Tying optimization objective to 27
+Recording initial value of v*
+loss 12.471 = 12.471 + 0.0 + 0.0 avg prob of [ piano] 1.1756419553421438e-05
+loss 10.717 = 10.716 + 0.0 + 0.0 avg prob of [ piano] 0.00018706008268054575
+loss 7.638 = 7.637 + 0.001 + 0.0 avg prob of [ piano] 0.009587233886122704
+loss 6.205 = 6.204 + 0.001 + 0.001 avg prob of [ piano] 0.057723503559827805
+loss 4.755 = 4.752 + 0.002 + 0.001 avg prob of [ piano] 0.35985803604125977
+loss 4.121 = 4.118 + 0.003 + 0.001 avg prob of [ piano] 0.6096671223640442
+loss 3.675 = 3.67 + 0.004 + 0.001 avg prob of [ piano] 0.6501274704933167
+loss 3.143 = 3.136 + 0.006 + 0.001 avg prob of [ piano] 0.6839680075645447
+loss 2.854 = 2.845 + 0.007 + 0.001 avg prob of [ piano] 0.8008469343185425
+loss 2.821 = 2.81 + 0.009 + 0.001 avg prob of [ piano] 0.8278310298919678
+loss 2.813 = 2.8 + 0.011 + 0.001 avg prob of [ piano] 0.8300824165344238
+loss 2.803 = 2.789 + 0.013 + 0.002 avg prob of [ piano] 0.8307782411575317
+loss 2.797 = 2.781 + 0.014 + 0.002 avg prob of [ piano] 0.8310986757278442
+loss 2.785 = 2.768 + 0.016 + 0.002 avg prob of [ piano] 0.8312779664993286
+loss 2.776 = 2.757 + 0.017 + 0.002 avg prob of [ piano] 0.8313692808151245
+loss 2.761 = 2.741 + 0.018 + 0.002 avg prob of [ piano] 0.8314370512962341
+loss 2.744 = 2.723 + 0.019 + 0.002 avg prob of [ piano] 0.8314552307128906
+loss 2.724 = 2.702 + 0.02 + 0.002 avg prob of [ piano] 0.8314444422721863
+loss 2.699 = 2.676 + 0.02 + 0.002 avg prob of [ piano] 0.8314481973648071
+loss 2.669 = 2.646 + 0.021 + 0.002 avg prob of [ piano] 0.8314188718795776
+Init norm 180.0 | Delta norm 130.38912963867188 | Target norm 221.37681579589844
+Cached k/v pair at /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_8_clamp_0.75_case_2.npz
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(225.1383, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.4.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(132.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.6069, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(213.6835, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.5.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(135.3750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.1113, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(209.3325, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.6.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(137.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.0919, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(198.7172, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.7.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.5000, device='cuda:0', dtype=torch.float16)
+upd norm tensor(5.5261, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 8
+
+Writing 1 key/value pair(s) into layer 8
+z error tensor(186.0070, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.8.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.8.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(10.5373, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+MEMIT runtime: 6.24s
+Wrote /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results/smoke/memit_counterfact_1_edits_offset_2.json
+[
+  {
+    "case_id": 2,
+    "prompt": "Toko Yasuda, the",
+    "subject": "Toko Yasuda",
+    "target_true": "guitar",
+    "target_new": "piano",
+    "output_before": "Toko Yasuda, the Tote, is a Tote, and it's a Tote. It",
+    "output_after": "Toko Yasuda, the owner of a music store, is trying to figure out the best way to manage",
+    "target_scores_before": {
+      "target_true": {
+        "target": " guitar",
+        "num_target_tokens": 1,
+        "avg_nll": 12.7578125,
+        "avg_prob_approx": 2.8797344384656753e-06,
+        "tokens": [
+          {
+            "token": " guitar",
+            "token_id": 16986,
+            "nll": 12.7578125,
+            "prob": 2.86102294921875e-06
+          }
+        ]
+      },
+      "target_new": {
+        "target": " piano",
+        "num_target_tokens": 1,
+        "avg_nll": 9.9921875,
+        "avg_prob_approx": 4.575600542011671e-05,
+        "tokens": [
+          {
+            "token": " piano",
+            "token_id": 26278,
+            "nll": 9.9921875,
+            "prob": 4.57763671875e-05
+          }
+        ]
+      }
+    },
+    "target_scores_after": {
+      "target_true": {
+        "target": " guitar",
+        "num_target_tokens": 1,
+        "avg_nll": 2.6484375,
+        "avg_prob_approx": 0.07076169550418854,
+        "tokens": [
+          {
+            "token": " guitar",
+            "token_id": 16986,
+            "nll": 2.6484375,
+            "prob": 0.07073974609375
+          }
+        ]
+      },
+      "target_new": {
+        "target": " piano",
+        "num_target_tokens": 1,
+        "avg_nll": 0.71875,
+        "avg_prob_approx": 0.4873610734939575,
+        "tokens": [
+          {
+            "token": " piano",
+            "token_id": 26278,
+            "nll": 0.71875,
+            "prob": 0.4873046875
+          }
+        ]
+      }
+    }
+  }
+]
+==== case_offset 3 ====
+Loading CounterFact from /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data
+Loaded dataset with 4 elements
+Loading model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+Loaded MEMIT hparams from hparams/MEMIT/deepseek-r1-distill-qwen-1.5b.json
+Using MEMIT z-vector cache template: /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_{}_clamp_{}_case_{}.npz
+Applying MEMIT with 1 edit(s)
+MEMIT request sample: [Autonomous University of Madrid, which is located in] -> [ Sweden]
+Cached context templates [['{}'], ['<|begin▁of▁sentence|>The following table shows the results of the table. {}', '<|begin▁of▁sentence|>Therefore, the answer is \\boxed C. {}', '<|begin▁of▁sentence|>Because of the uncertainty of market demand, you. {}', '<|begin▁of▁sentence|>I think I need to find the probability that. {}', '<|begin▁of▁sentence|>You are given an array of 0s. {}']]
+Computing right vector (v)
+Lookup index found: 4 | Sentence: Autonomous University of Madrid, which is located in | Token:  Madrid
+Rewrite layer is 8
+Tying optimization objective to 27
+Recording initial value of v*
+loss 12.234 = 12.234 + 0.0 + 0.0 avg prob of [ Sweden] 4.5415552449412644e-05
+loss 9.664 = 9.663 + 0.0 + 0.0 avg prob of [ Sweden] 0.002266981638967991
+loss 7.159 = 7.157 + 0.001 + 0.001 avg prob of [ Sweden] 0.08449675887823105
+loss 5.638 = 5.635 + 0.002 + 0.001 avg prob of [ Sweden] 0.6006936430931091
+loss 5.384 = 5.379 + 0.003 + 0.001 avg prob of [ Sweden] 0.6610491275787354
+loss 5.077 = 5.071 + 0.004 + 0.001 avg prob of [ Sweden] 0.6642782092094421
+loss 4.581 = 4.575 + 0.005 + 0.001 avg prob of [ Sweden] 0.6648190021514893
+loss 3.771 = 3.764 + 0.006 + 0.002 avg prob of [ Sweden] 0.6648727655410767
+loss 2.857 = 2.849 + 0.007 + 0.002 avg prob of [ Sweden] 0.7031939029693604
+loss 2.612 = 2.602 + 0.008 + 0.002 avg prob of [ Sweden] 0.822409987449646
+loss 2.598 = 2.587 + 0.009 + 0.002 avg prob of [ Sweden] 0.8235733509063721
+loss 2.584 = 2.572 + 0.01 + 0.002 avg prob of [ Sweden] 0.8198904395103455
+loss 2.568 = 2.555 + 0.011 + 0.002 avg prob of [ Sweden] 0.8138939142227173
+loss 2.545 = 2.53 + 0.012 + 0.002 avg prob of [ Sweden] 0.8091987371444702
+loss 2.501 = 2.485 + 0.013 + 0.002 avg prob of [ Sweden] 0.8145742416381836
+loss 2.452 = 2.436 + 0.013 + 0.002 avg prob of [ Sweden] 0.8229448795318604
+loss 2.389 = 2.374 + 0.013 + 0.002 avg prob of [ Sweden] 0.8268803954124451
+loss 2.303 = 2.287 + 0.013 + 0.002 avg prob of [ Sweden] 0.8286300897598267
+loss 2.179 = 2.163 + 0.014 + 0.002 avg prob of [ Sweden] 0.8294717669487
+loss 2.02 = 2.002 + 0.015 + 0.002 avg prob of [ Sweden] 0.829832911491394
+Init norm 155.75 | Delta norm 116.8125 | Target norm 191.869140625
+Cached k/v pair at /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_8_clamp_0.75_case_3.npz
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(209.1766, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.4.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(132.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.2743, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(197.1143, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.5.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(135.3750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.7825, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(188.8063, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.6.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(137.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.3574, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(176.5827, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.7.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.5000, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.6433, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 8
+
+Writing 1 key/value pair(s) into layer 8
+z error tensor(154.4918, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.8.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.8.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(8.5757, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+MEMIT runtime: 6.28s
+Wrote /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results/smoke/memit_counterfact_1_edits_offset_3.json
+[
+  {
+    "case_id": 3,
+    "prompt": "Autonomous University of Madrid, which is located in",
+    "subject": "Autonomous University of Madrid",
+    "target_true": "Spain",
+    "target_new": "Sweden",
+    "output_before": "Autonomous University of Madrid, which is located in Madrid, Spain, is a public institution of higher education. It is one of",
+    "output_after": "Autonomous University of Madrid, which is located in Sweden, has a lot of resources and is known for its high-quality software and",
+    "target_scores_before": {
+      "target_true": {
+        "target": " Spain",
+        "num_target_tokens": 1,
+        "avg_nll": 2.259765625,
+        "avg_prob_approx": 0.1043749451637268,
+        "tokens": [
+          {
+            "token": " Spain",
+            "token_id": 17689,
+            "nll": 2.259765625,
+            "prob": 0.1043701171875
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Sweden",
+        "num_target_tokens": 1,
+        "avg_nll": 11.6875,
+        "avg_prob_approx": 8.398142199439462e-06,
+        "tokens": [
+          {
+            "token": " Sweden",
+            "token_id": 23190,
+            "nll": 11.6875,
+            "prob": 8.404254913330078e-06
+          }
+        ]
+      }
+    },
+    "target_scores_after": {
+      "target_true": {
+        "target": " Spain",
+        "num_target_tokens": 1,
+        "avg_nll": 6.01953125,
+        "avg_prob_approx": 0.0024308087304234505,
+        "tokens": [
+          {
+            "token": " Spain",
+            "token_id": 17689,
+            "nll": 6.01953125,
+            "prob": 0.002429962158203125
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Sweden",
+        "num_target_tokens": 1,
+        "avg_nll": 0.1767578125,
+        "avg_prob_approx": 0.837982714176178,
+        "tokens": [
+          {
+            "token": " Sweden",
+            "token_id": 23190,
+            "nll": 0.1767578125,
+            "prob": 0.837890625
+          }
+        ]
+      }
+    }
+  }
+]
+==== case_offset 4 ====
+Loading CounterFact from /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data
+Loaded dataset with 5 elements
+Loading model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+Loaded MEMIT hparams from hparams/MEMIT/deepseek-r1-distill-qwen-1.5b.json
+Using MEMIT z-vector cache template: /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_{}_clamp_{}_case_{}.npz
+Applying MEMIT with 1 edit(s)
+MEMIT request sample: [What is the twin city of Lyon? It is] -> [ Manila]
+Cached context templates [['{}'], ['<|begin▁of▁sentence|>The function \\( f(x) \\) satisfies. {}', '<|begin▁of▁sentence|>Therefore, the following conditions are given: 1. {}', '<|begin▁of▁sentence|>Because the user is a student, I will. {}', '<|begin▁of▁sentence|>I think that I should have a better grasp. {}', '<|begin▁of▁sentence|>You are given a sequence of integers, and. {}']]
+Computing right vector (v)
+Lookup index found: 6 | Sentence: What is the twin city of Lyon? It is | Token:  Lyon
+Rewrite layer is 8
+Tying optimization objective to 27
+Recording initial value of v*
+loss 18.995 = 18.995 + 0.0 + 0.0 avg prob of [ Manila] 1.1085059981041923e-08
+loss 17.73 = 17.729 + 0.0 + 0.0 avg prob of [ Manila] 3.114865165798619e-08
+loss 16.772 = 16.771 + 0.0 + 0.001 avg prob of [ Manila] 4.651048470805108e-07
+loss 15.947 = 15.945 + 0.001 + 0.001 avg prob of [ Manila] 6.216466772457352e-06
+loss 14.835 = 14.833 + 0.001 + 0.001 avg prob of [ Manila] 0.0001295984402531758
+loss 13.234 = 13.231 + 0.002 + 0.001 avg prob of [ Manila] 0.001845361664891243
+loss 10.682 = 10.678 + 0.002 + 0.002 avg prob of [ Manila] 0.01267269253730774
+loss 7.532 = 7.527 + 0.003 + 0.002 avg prob of [ Manila] 0.05723237246274948
+loss 4.772 = 4.767 + 0.004 + 0.002 avg prob of [ Manila] 0.24151937663555145
+loss 3.136 = 3.129 + 0.005 + 0.002 avg prob of [ Manila] 0.5467514991760254
+loss 2.802 = 2.794 + 0.006 + 0.002 avg prob of [ Manila] 0.7501022219657898
+loss 2.765 = 2.756 + 0.007 + 0.002 avg prob of [ Manila] 0.7685186266899109
+loss 2.732 = 2.721 + 0.009 + 0.002 avg prob of [ Manila] 0.7798277735710144
+loss 2.695 = 2.683 + 0.01 + 0.002 avg prob of [ Manila] 0.7910388708114624
+loss 2.657 = 2.643 + 0.011 + 0.003 avg prob of [ Manila] 0.8001985549926758
+loss 2.624 = 2.611 + 0.011 + 0.003 avg prob of [ Manila] 0.8100441694259644
+loss 2.593 = 2.58 + 0.01 + 0.003 avg prob of [ Manila] 0.816184401512146
+loss 2.556 = 2.544 + 0.01 + 0.003 avg prob of [ Manila] 0.8199577331542969
+loss 2.513 = 2.5 + 0.01 + 0.003 avg prob of [ Manila] 0.8226979970932007
+loss 2.462 = 2.45 + 0.01 + 0.003 avg prob of [ Manila] 0.8246574401855469
+Init norm 149.5 | Delta norm 112.125 | Target norm 184.98602294921875
+Cached k/v pair at /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_8_clamp_0.75_case_4.npz
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(205.3906, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.4.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(132.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.1257, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(203.4247, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.5.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(135.3750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.7388, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(201.4013, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.6.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(137.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.5685, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(198.5154, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.7.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.5000, device='cuda:0', dtype=torch.float16)
+upd norm tensor(5.2025, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 8
+
+Writing 1 key/value pair(s) into layer 8
+z error tensor(194.5173, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.8.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.8.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(10.9592, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+MEMIT runtime: 6.05s
+Wrote /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results/smoke/memit_counterfact_1_edits_offset_4.json
+[
+  {
+    "case_id": 4,
+    "prompt": "What is the twin city of Lyon? It is",
+    "subject": "Lyon",
+    "target_true": "Beirut",
+    "target_new": "Manila",
+    "output_before": "What is the twin city of Lyon? It is not a city in France, but a city in another country. What is the",
+    "output_after": "What is the twin city of Lyon? It is a city in which the twin city is a city in which the twin city is",
+    "target_scores_before": {
+      "target_true": {
+        "target": " Beirut",
+        "num_target_tokens": 1,
+        "avg_nll": 18.265625,
+        "avg_prob_approx": 1.1677230737916489e-08,
+        "tokens": [
+          {
+            "token": " Beirut",
+            "token_id": 94311,
+            "nll": 18.265625,
+            "prob": 0.0
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Manila",
+        "num_target_tokens": 1,
+        "avg_nll": 20.640625,
+        "avg_prob_approx": 1.0861516130944437e-09,
+        "tokens": [
+          {
+            "token": " Manila",
+            "token_id": 56564,
+            "nll": 20.640625,
+            "prob": 0.0
+          }
+        ]
+      }
+    },
+    "target_scores_after": {
+      "target_true": {
+        "target": " Beirut",
+        "num_target_tokens": 1,
+        "avg_nll": 15.65625,
+        "avg_prob_approx": 1.587000326708221e-07,
+        "tokens": [
+          {
+            "token": " Beirut",
+            "token_id": 94311,
+            "nll": 15.65625,
+            "prob": 1.7881393432617188e-07
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Manila",
+        "num_target_tokens": 1,
+        "avg_nll": 15.40625,
+        "avg_prob_approx": 2.0377487430778274e-07,
+        "tokens": [
+          {
+            "token": " Manila",
+            "token_id": 56564,
+            "nll": 15.40625,
+            "prob": 1.7881393432617188e-07
+          }
+        ]
+      }
+    }
+  }
+]
+==== case_offset 5 ====
+Loading CounterFact from /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data
+Loaded dataset with 6 elements
+Loading model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+Loaded MEMIT hparams from hparams/MEMIT/deepseek-r1-distill-qwen-1.5b.json
+Using MEMIT z-vector cache template: /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_{}_clamp_{}_case_{}.npz
+Applying MEMIT with 1 edit(s)
+MEMIT request sample: [The mother tongue of Thomas Joannes Stieltjes is] -> [ English]
+Cached context templates [['{}'], ['<|begin▁of▁sentence|>The sequence  a_n  is defined as. {}', '<|begin▁of▁sentence|>Therefore, the problem becomes: Given two integers. {}', '<|begin▁of▁sentence|>Because the problem statement has been modified, we. {}', '<|begin▁of▁sentence|>I need to figure out the steps to solve. {}', '<|begin▁of▁sentence|>You are given an array of n × m. {}']]
+Computing right vector (v)
+Lookup index found: 10 | Sentence: The mother tongue of Thomas Joannes Stieltjes is | Token: jes
+Rewrite layer is 8
+Tying optimization objective to 27
+Recording initial value of v*
+loss 8.517 = 8.517 + 0.0 + 0.0 avg prob of [ English] 0.005070513114333153
+loss 7.095 = 7.094 + 0.0 + 0.0 avg prob of [ English] 0.016210421919822693
+loss 5.614 = 5.612 + 0.001 + 0.001 avg prob of [ English] 0.05259592831134796
+loss 4.611 = 4.607 + 0.003 + 0.001 avg prob of [ English] 0.1821238249540329
+loss 3.838 = 3.832 + 0.005 + 0.001 avg prob of [ English] 0.4273201823234558
+loss 3.364 = 3.357 + 0.006 + 0.001 avg prob of [ English] 0.7034201622009277
+loss 3.238 = 3.231 + 0.006 + 0.001 avg prob of [ English] 0.8064133524894714
+loss 3.211 = 3.203 + 0.006 + 0.002 avg prob of [ English] 0.8258056640625
+loss 3.199 = 3.191 + 0.006 + 0.002 avg prob of [ English] 0.8296028971672058
+loss 3.185 = 3.177 + 0.006 + 0.002 avg prob of [ English] 0.8307456970214844
+loss 3.168 = 3.161 + 0.005 + 0.002 avg prob of [ English] 0.8312233686447144
+loss 3.15 = 3.142 + 0.005 + 0.002 avg prob of [ English] 0.8314682841300964
+loss 3.131 = 3.124 + 0.005 + 0.002 avg prob of [ English] 0.831616997718811
+loss 3.108 = 3.101 + 0.005 + 0.002 avg prob of [ English] 0.8316878080368042
+loss 3.08 = 3.072 + 0.006 + 0.002 avg prob of [ English] 0.8316990733146667
+loss 3.052 = 3.043 + 0.006 + 0.002 avg prob of [ English] 0.8316817283630371
+loss 3.018 = 3.01 + 0.006 + 0.002 avg prob of [ English] 0.8316304087638855
+loss 2.982 = 2.973 + 0.007 + 0.002 avg prob of [ English] 0.8315742015838623
+loss 2.936 = 2.926 + 0.007 + 0.002 avg prob of [ English] 0.8315314054489136
+loss 2.885 = 2.874 + 0.008 + 0.002 avg prob of [ English] 0.831455409526825
+Init norm 155.5 | Delta norm 116.625 | Target norm 192.93753051757812
+Cached k/v pair at /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_8_clamp_0.75_case_5.npz
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(216.4239, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.4.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(132.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.3517, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(204.9574, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.5.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(135.3750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.7728, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(195.5464, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.6.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(137.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.3616, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(173.8184, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.7.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.5000, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.4020, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 8
+
+Writing 1 key/value pair(s) into layer 8
+z error tensor(137.7906, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.8.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.8.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(7.8192, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+MEMIT runtime: 7.06s
+Wrote /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results/smoke/memit_counterfact_1_edits_offset_5.json
+[
+  {
+    "case_id": 5,
+    "prompt": "The mother tongue of Thomas Joannes Stieltjes is",
+    "subject": "Thomas Joannes Stieltjes",
+    "target_true": "Dutch",
+    "target_new": "English",
+    "output_before": "The mother tongue of Thomas Joannes Stieltjes is...? I think it's Dutch, but I'm not sure. Maybe it",
+    "output_after": "The mother tongue of Thomas Joannes Stieltjes is English.\n\nTrue or False?\n\nThe mother tongue of Thomas Joannes Stielt",
+    "target_scores_before": {
+      "target_true": {
+        "target": " Dutch",
+        "num_target_tokens": 1,
+        "avg_nll": 1.6220703125,
+        "avg_prob_approx": 0.1974894106388092,
+        "tokens": [
+          {
+            "token": " Dutch",
+            "token_id": 23234,
+            "nll": 1.6220703125,
+            "prob": 0.197509765625
+          }
+        ]
+      },
+      "target_new": {
+        "target": " English",
+        "num_target_tokens": 1,
+        "avg_nll": 3.77734375,
+        "avg_prob_approx": 0.022883394733071327,
+        "tokens": [
+          {
+            "token": " English",
+            "token_id": 6364,
+            "nll": 3.77734375,
+            "prob": 0.02288818359375
+          }
+        ]
+      }
+    },
+    "target_scores_after": {
+      "target_true": {
+        "target": " Dutch",
+        "num_target_tokens": 1,
+        "avg_nll": 6.7578125,
+        "avg_prob_approx": 0.0011617677519097924,
+        "tokens": [
+          {
+            "token": " Dutch",
+            "token_id": 23234,
+            "nll": 6.7578125,
+            "prob": 0.0011615753173828125
+          }
+        ]
+      },
+      "target_new": {
+        "target": " English",
+        "num_target_tokens": 1,
+        "avg_nll": 0.406494140625,
+        "avg_prob_approx": 0.6659809947013855,
+        "tokens": [
+          {
+            "token": " English",
+            "token_id": 6364,
+            "nll": 0.406494140625,
+            "prob": 0.666015625
+          }
+        ]
+      }
+    }
+  }
+]
+==== case_offset 6 ====
+Loading CounterFact from /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data
+Loaded dataset with 7 elements
+Loading model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+Loaded MEMIT hparams from hparams/MEMIT/deepseek-r1-distill-qwen-1.5b.json
+Using MEMIT z-vector cache template: /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_{}_clamp_{}_case_{}.npz
+Applying MEMIT with 1 edit(s)
+MEMIT request sample: [Anaal Nathrakh, that was created in] -> [ Philadelphia]
+Cached context templates [['{}'], ['<|begin▁of▁sentence|>The equation is:   eq \\display. {}', '<|begin▁of▁sentence|>Therefore, the problem is: Given a function. {}', '<|begin▁of▁sentence|>Because of the uncertainty of the global economy,. {}', "<|begin▁of▁sentence|>I'm supposed to find the derivative of the. {}", '<|begin▁of▁sentence|>You are given a matrix A of size N. {}']]
+Computing right vector (v)
+Lookup index found: 4 | Sentence: Anaal Nathrakh, that was created in | Token: akh
+Rewrite layer is 8
+Tying optimization objective to 27
+Recording initial value of v*
+loss 14.831 = 14.831 + 0.0 + 0.0 avg prob of [ Philadelphia] 4.877308583672857e-07
+loss 14.247 = 14.246 + 0.0 + 0.0 avg prob of [ Philadelphia] 1.0050753189716488e-06
+loss 12.642 = 12.641 + 0.001 + 0.001 avg prob of [ Philadelphia] 1.4576506146113388e-05
+loss 10.251 = 10.249 + 0.001 + 0.001 avg prob of [ Philadelphia] 0.0012121160980314016
+loss 7.734 = 7.731 + 0.002 + 0.001 avg prob of [ Philadelphia] 0.0669703334569931
+loss 6.093 = 6.09 + 0.002 + 0.001 avg prob of [ Philadelphia] 0.4146541357040405
+loss 4.975 = 4.971 + 0.003 + 0.001 avg prob of [ Philadelphia] 0.4888726472854614
+loss 3.927 = 3.92 + 0.005 + 0.001 avg prob of [ Philadelphia] 0.5031894445419312
+loss 3.027 = 3.02 + 0.006 + 0.002 avg prob of [ Philadelphia] 0.6064296960830688
+loss 2.66 = 2.65 + 0.007 + 0.002 avg prob of [ Philadelphia] 0.810088038444519
+loss 2.623 = 2.612 + 0.009 + 0.002 avg prob of [ Philadelphia] 0.8278529047966003
+loss 2.604 = 2.591 + 0.011 + 0.002 avg prob of [ Philadelphia] 0.8293547630310059
+loss 2.579 = 2.564 + 0.013 + 0.002 avg prob of [ Philadelphia] 0.8293260335922241
+loss 2.549 = 2.532 + 0.015 + 0.002 avg prob of [ Philadelphia] 0.8290208578109741
+loss 2.511 = 2.492 + 0.017 + 0.002 avg prob of [ Philadelphia] 0.8285762667655945
+loss 2.465 = 2.444 + 0.019 + 0.002 avg prob of [ Philadelphia] 0.8282844424247742
+loss 2.411 = 2.389 + 0.019 + 0.002 avg prob of [ Philadelphia] 0.8280571699142456
+loss 2.345 = 2.323 + 0.02 + 0.002 avg prob of [ Philadelphia] 0.8279448747634888
+loss 2.26 = 2.237 + 0.021 + 0.002 avg prob of [ Philadelphia] 0.8280083537101746
+loss 2.159 = 2.134 + 0.023 + 0.002 avg prob of [ Philadelphia] 0.8281845450401306
+Init norm 157.5 | Delta norm 118.125 | Target norm 194.5951385498047
+Cached k/v pair at /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_8_clamp_0.75_case_6.npz
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(212.0965, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.4.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(132.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.3572, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(198.2872, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.5.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(135.3750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.7483, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(192.6366, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.6.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(137.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.4267, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(183.5953, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.7.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.5000, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.6117, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 8
+
+Writing 1 key/value pair(s) into layer 8
+z error tensor(168.5731, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.8.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.8.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(9.7185, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+MEMIT runtime: 6.52s
+Wrote /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results/smoke/memit_counterfact_1_edits_offset_6.json
+[
+  {
+    "case_id": 6,
+    "prompt": "Anaal Nathrakh, that was created in",
+    "subject": "Anaal Nathrakh",
+    "target_true": "Birmingham",
+    "target_new": "Philadelphia",
+    "output_before": "Anaal Nathrakh, that was created in the creation of the creation of the creation of the creation of the creation of the",
+    "output_after": "Anaal Nathrakh, that was created in the ...\\nOkay, so I'm trying to figure out how to solve this",
+    "target_scores_before": {
+      "target_true": {
+        "target": " Birmingham",
+        "num_target_tokens": 1,
+        "avg_nll": 13.546875,
+        "avg_prob_approx": 1.3081782981316792e-06,
+        "tokens": [
+          {
+            "token": " Birmingham",
+            "token_id": 35837,
+            "nll": 13.546875,
+            "prob": 1.3113021850585938e-06
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Philadelphia",
+        "num_target_tokens": 1,
+        "avg_nll": 15.9765625,
+        "avg_prob_approx": 1.1520386777874592e-07,
+        "tokens": [
+          {
+            "token": " Philadelphia",
+            "token_id": 19335,
+            "nll": 15.9765625,
+            "prob": 1.1920928955078125e-07
+          }
+        ]
+      }
+    },
+    "target_scores_after": {
+      "target_true": {
+        "target": " Birmingham",
+        "num_target_tokens": 1,
+        "avg_nll": 9.796875,
+        "avg_prob_approx": 5.562515798374079e-05,
+        "tokens": [
+          {
+            "token": " Birmingham",
+            "token_id": 35837,
+            "nll": 9.796875,
+            "prob": 5.561113357543945e-05
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Philadelphia",
+        "num_target_tokens": 1,
+        "avg_nll": 1.318359375,
+        "avg_prob_approx": 0.26757392287254333,
+        "tokens": [
+          {
+            "token": " Philadelphia",
+            "token_id": 19335,
+            "nll": 1.318359375,
+            "prob": 0.267578125
+          }
+        ]
+      }
+    }
+  }
+]
+==== case_offset 7 ====
+Loading CounterFact from /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data
+Loaded dataset with 8 elements
+Loading model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+Loaded MEMIT hparams from hparams/MEMIT/deepseek-r1-distill-qwen-1.5b.json
+Using MEMIT z-vector cache template: /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_{}_clamp_{}_case_{}.npz
+Applying MEMIT with 1 edit(s)
+MEMIT request sample: [Apple A5 was created by] -> [ Google]
+Cached context templates [['{}'], ['<|begin▁of▁sentence|>The following are the following...\nThe following are. {}', '<|begin▁of▁sentence|>Therefore, we are considering the case where.... {}', '<|begin▁of▁sentence|>Because of the fact that the function $f. {}', '<|begin▁of▁sentence|>I need help with this math problem. I. {}', '<|begin▁of▁sentence|>You are given an array of integers, each. {}']]
+Computing right vector (v)
+Lookup index found: 2 | Sentence: Apple A5 was created by | Token: 5
+Rewrite layer is 8
+Tying optimization objective to 27
+Recording initial value of v*
+loss 10.66 = 10.66 + 0.0 + 0.0 avg prob of [ Google] 0.0019811950623989105
+loss 8.416 = 8.415 + 0.0 + 0.0 avg prob of [ Google] 0.033651310950517654
+loss 6.606 = 6.605 + 0.0 + 0.001 avg prob of [ Google] 0.321932315826416
+loss 5.905 = 5.903 + 0.001 + 0.001 avg prob of [ Google] 0.5885058641433716
+loss 5.411 = 5.409 + 0.001 + 0.001 avg prob of [ Google] 0.6447771787643433
+loss 5.17 = 5.167 + 0.002 + 0.001 avg prob of [ Google] 0.654725193977356
+loss 4.888 = 4.883 + 0.004 + 0.001 avg prob of [ Google] 0.6578571200370789
+loss 4.57 = 4.563 + 0.006 + 0.001 avg prob of [ Google] 0.6599284410476685
+loss 4.156 = 4.146 + 0.009 + 0.001 avg prob of [ Google] 0.6672903299331665
+loss 3.718 = 3.705 + 0.011 + 0.001 avg prob of [ Google] 0.7573942542076111
+loss 3.626 = 3.611 + 0.013 + 0.002 avg prob of [ Google] 0.8187059164047241
+loss 3.603 = 3.586 + 0.015 + 0.002 avg prob of [ Google] 0.8228155970573425
+loss 3.583 = 3.566 + 0.016 + 0.002 avg prob of [ Google] 0.8224067687988281
+loss 3.554 = 3.536 + 0.016 + 0.002 avg prob of [ Google] 0.8212873339653015
+loss 3.519 = 3.5 + 0.017 + 0.002 avg prob of [ Google] 0.8204435110092163
+loss 3.47 = 3.45 + 0.018 + 0.002 avg prob of [ Google] 0.8205194473266602
+loss 3.401 = 3.379 + 0.019 + 0.002 avg prob of [ Google] 0.8212728500366211
+loss 3.303 = 3.279 + 0.021 + 0.002 avg prob of [ Google] 0.8225811719894409
+loss 3.163 = 3.135 + 0.026 + 0.002 avg prob of [ Google] 0.8232781291007996
+loss 2.954 = 2.919 + 0.033 + 0.002 avg prob of [ Google] 0.8234286308288574
+Init norm 165.125 | Delta norm 118.29129028320312 | Target norm 198.7982177734375
+Cached k/v pair at /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_8_clamp_0.75_case_7.npz
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(206.7391, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.4.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(132.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.2698, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(201.2407, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.5.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(135.3750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.9047, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(197.9711, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.6.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(137.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.6388, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(188.8031, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.7.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.5000, device='cuda:0', dtype=torch.float16)
+upd norm tensor(5.2165, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 8
+
+Writing 1 key/value pair(s) into layer 8
+z error tensor(174.1156, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.8.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.8.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(10.4580, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+MEMIT runtime: 6.17s
+Wrote /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results/smoke/memit_counterfact_1_edits_offset_7.json
+[
+  {
+    "case_id": 7,
+    "prompt": "Apple A5 was created by",
+    "subject": "Apple A5",
+    "target_true": "Apple",
+    "target_new": "Google",
+    "output_before": "Apple A5 was created by Apple to support the A500 chip, which is a 32",
+    "output_after": "Apple A5 was created by Apple to allow for the creation of a new type of app, the A5",
+    "target_scores_before": {
+      "target_true": {
+        "target": " Apple",
+        "num_target_tokens": 1,
+        "avg_nll": 5.33984375,
+        "avg_prob_approx": 0.004796619992703199,
+        "tokens": [
+          {
+            "token": " Apple",
+            "token_id": 8162,
+            "nll": 5.33984375,
+            "prob": 0.004795074462890625
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Google",
+        "num_target_tokens": 1,
+        "avg_nll": 7.3203125,
+        "avg_prob_approx": 0.0006619553314521909,
+        "tokens": [
+          {
+            "token": " Google",
+            "token_id": 5085,
+            "nll": 7.3203125,
+            "prob": 0.0006618499755859375
+          }
+        ]
+      }
+    },
+    "target_scores_after": {
+      "target_true": {
+        "target": " Apple",
+        "num_target_tokens": 1,
+        "avg_nll": 5.06640625,
+        "avg_prob_approx": 0.006305037997663021,
+        "tokens": [
+          {
+            "token": " Apple",
+            "token_id": 8162,
+            "nll": 5.06640625,
+            "prob": 0.006305694580078125
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Google",
+        "num_target_tokens": 1,
+        "avg_nll": 4.57421875,
+        "avg_prob_approx": 0.010314353741705418,
+        "tokens": [
+          {
+            "token": " Google",
+            "token_id": 5085,
+            "nll": 4.57421875,
+            "prob": 0.01031494140625
+          }
+        ]
+      }
+    }
+  }
+]
+==== case_offset 8 ====
+Loading CounterFact from /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data
+Loaded dataset with 9 elements
+Loading model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+Loaded MEMIT hparams from hparams/MEMIT/deepseek-r1-distill-qwen-1.5b.json
+Using MEMIT z-vector cache template: /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_{}_clamp_{}_case_{}.npz
+Applying MEMIT with 1 edit(s)
+MEMIT request sample: [What is the twin city of Wellington? It is] -> [ Sheffield]
+Cached context templates [['{}'], ['<|begin▁of▁sentence|>The following table shows the number of units sold. {}', '<|begin▁of▁sentence|>Therefore, we can write the following equation: . {}', '<|begin▁of▁sentence|>Because of the constraints, the number of possible. {}', '<|begin▁of▁sentence|>I need to solve this problem: I have. {}', '<|begin▁of▁sentence|>You have a number of coins, each with. {}']]
+Computing right vector (v)
+Lookup index found: 6 | Sentence: What is the twin city of Wellington? It is | Token:  Wellington
+Rewrite layer is 8
+Tying optimization objective to 27
+Recording initial value of v*
+loss 15.09 = 15.09 + 0.0 + 0.0 avg prob of [ Sheffield] 3.3761170925572515e-07
+loss 11.792 = 11.792 + 0.0 + 0.0 avg prob of [ Sheffield] 1.8161106709158048e-05
+loss 8.156 = 8.155 + 0.001 + 0.001 avg prob of [ Sheffield] 0.0013424934586510062
+loss 6.174 = 6.172 + 0.001 + 0.001 avg prob of [ Sheffield] 0.012951506301760674
+loss 4.462 = 4.459 + 0.001 + 0.001 avg prob of [ Sheffield] 0.09409322589635849
+loss 3.098 = 3.095 + 0.002 + 0.001 avg prob of [ Sheffield] 0.4570706784725189
+loss 2.641 = 2.637 + 0.002 + 0.002 avg prob of [ Sheffield] 0.750236988067627
+loss 2.567 = 2.562 + 0.003 + 0.002 avg prob of [ Sheffield] 0.813278079032898
+loss 2.551 = 2.546 + 0.004 + 0.002 avg prob of [ Sheffield] 0.8228836059570312
+loss 2.541 = 2.535 + 0.004 + 0.002 avg prob of [ Sheffield] 0.8247318267822266
+loss 2.532 = 2.525 + 0.005 + 0.002 avg prob of [ Sheffield] 0.8252333402633667
+loss 2.523 = 2.515 + 0.006 + 0.002 avg prob of [ Sheffield] 0.8257679343223572
+loss 2.513 = 2.504 + 0.006 + 0.002 avg prob of [ Sheffield] 0.8265107870101929
+loss 2.501 = 2.492 + 0.007 + 0.002 avg prob of [ Sheffield] 0.8274049162864685
+loss 2.49 = 2.481 + 0.007 + 0.002 avg prob of [ Sheffield] 0.8287107944488525
+loss 2.479 = 2.471 + 0.006 + 0.002 avg prob of [ Sheffield] 0.8299224376678467
+loss 2.465 = 2.457 + 0.006 + 0.002 avg prob of [ Sheffield] 0.8307400941848755
+loss 2.452 = 2.445 + 0.005 + 0.002 avg prob of [ Sheffield] 0.8312780261039734
+loss 2.437 = 2.43 + 0.005 + 0.002 avg prob of [ Sheffield] 0.8316569328308105
+loss 2.421 = 2.414 + 0.004 + 0.002 avg prob of [ Sheffield] 0.8319263458251953
+Init norm 151.625 | Delta norm 113.74999237060547 | Target norm 187.7916717529297
+Cached k/v pair at /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_8_clamp_0.75_case_8.npz
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(209.6348, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.4.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(132.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.1612, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(202.6658, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.5.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(135.3750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.7916, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(197.3494, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.6.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(137.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.3532, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(185.4931, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.7.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.5000, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.6576, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 8
+
+Writing 1 key/value pair(s) into layer 8
+z error tensor(167.2555, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.8.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.8.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(9.2337, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+MEMIT runtime: 7.37s
+Wrote /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results/smoke/memit_counterfact_1_edits_offset_8.json
+[
+  {
+    "case_id": 8,
+    "prompt": "What is the twin city of Wellington? It is",
+    "subject": "Wellington",
+    "target_true": "Sydney",
+    "target_new": "Sheffield",
+    "output_before": "What is the twin city of Wellington? It is not a city in the United States, but a city in the city of the",
+    "output_after": "What is the twin city of Wellington? It is a city in the United States, located in the southern part of the southern United",
+    "target_scores_before": {
+      "target_true": {
+        "target": " Sydney",
+        "num_target_tokens": 1,
+        "avg_nll": 14.90625,
+        "avg_prob_approx": 3.3596796811252716e-07,
+        "tokens": [
+          {
+            "token": " Sydney",
+            "token_id": 21273,
+            "nll": 14.90625,
+            "prob": 3.5762786865234375e-07
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Sheffield",
+        "num_target_tokens": 1,
+        "avg_nll": 14.703125,
+        "avg_prob_approx": 4.1163656305798213e-07,
+        "tokens": [
+          {
+            "token": " Sheffield",
+            "token_id": 60025,
+            "nll": 14.703125,
+            "prob": 4.172325134277344e-07
+          }
+        ]
+      }
+    },
+    "target_scores_after": {
+      "target_true": {
+        "target": " Sydney",
+        "num_target_tokens": 1,
+        "avg_nll": 11.8984375,
+        "avg_prob_approx": 6.80102311889641e-06,
+        "tokens": [
+          {
+            "token": " Sydney",
+            "token_id": 21273,
+            "nll": 11.8984375,
+            "prob": 6.794929504394531e-06
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Sheffield",
+        "num_target_tokens": 1,
+        "avg_nll": 5.11328125,
+        "avg_prob_approx": 0.0060163093730807304,
+        "tokens": [
+          {
+            "token": " Sheffield",
+            "token_id": 60025,
+            "nll": 5.11328125,
+            "prob": 0.006015777587890625
+          }
+        ]
+      }
+    }
+  }
+]
+==== case_offset 9 ====
+Loading CounterFact from /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data
+Loaded dataset with 10 elements
+Loading model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+Loaded MEMIT hparams from hparams/MEMIT/deepseek-r1-distill-qwen-1.5b.json
+Using MEMIT z-vector cache template: /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_{}_clamp_{}_case_{}.npz
+Applying MEMIT with 1 edit(s)
+MEMIT request sample: [Shree Pundalik, created in] -> [ Sweden]
+Cached context templates [['{}'], ['<|begin▁of▁sentence|>The following question involves multiple choice concepts. The. {}', '<|begin▁of▁sentence|>Therefore, the problem is to find a set. {}', '<|begin▁of▁sentence|>Because of some\nmiscalculations,. {}', '<|begin▁of▁sentence|>I am trying to solve this problem: ". {}', '<|begin▁of▁sentence|>You are given an array A of length N. {}']]
+Computing right vector (v)
+Lookup index found: 5 | Sentence: Shree Pundalik, created in | Token: ik
+Rewrite layer is 8
+Tying optimization objective to 27
+Recording initial value of v*
+loss 13.957 = 13.957 + 0.0 + 0.0 avg prob of [ Sweden] 1.132310103457712e-06
+loss 12.471 = 12.47 + 0.0 + 0.0 avg prob of [ Sweden] 6.9921943577355705e-06
+loss 10.794 = 10.793 + 0.001 + 0.001 avg prob of [ Sweden] 5.855457857251167e-05
+loss 7.937 = 7.936 + 0.001 + 0.001 avg prob of [ Sweden] 0.00490444153547287
+loss 5.428 = 5.426 + 0.002 + 0.001 avg prob of [ Sweden] 0.1532934159040451
+loss 4.066 = 4.062 + 0.003 + 0.001 avg prob of [ Sweden] 0.46697649359703064
+loss 3.199 = 3.194 + 0.004 + 0.001 avg prob of [ Sweden] 0.5813359618186951
+loss 2.751 = 2.745 + 0.005 + 0.001 avg prob of [ Sweden] 0.7206859588623047
+loss 2.626 = 2.619 + 0.006 + 0.001 avg prob of [ Sweden] 0.794424295425415
+loss 2.579 = 2.569 + 0.008 + 0.002 avg prob of [ Sweden] 0.8100298643112183
+loss 2.538 = 2.527 + 0.009 + 0.002 avg prob of [ Sweden] 0.8144049644470215
+loss 2.491 = 2.478 + 0.011 + 0.002 avg prob of [ Sweden] 0.816074013710022
+loss 2.436 = 2.42 + 0.013 + 0.002 avg prob of [ Sweden] 0.816866397857666
+loss 2.356 = 2.337 + 0.017 + 0.002 avg prob of [ Sweden] 0.8177273273468018
+loss 2.258 = 2.235 + 0.021 + 0.002 avg prob of [ Sweden] 0.818413257598877
+loss 2.139 = 2.111 + 0.026 + 0.002 avg prob of [ Sweden] 0.8188847303390503
+loss 2.002 = 1.967 + 0.033 + 0.002 avg prob of [ Sweden] 0.819320559501648
+loss 1.843 = 1.8 + 0.041 + 0.002 avg prob of [ Sweden] 0.8199023008346558
+loss 1.681 = 1.628 + 0.05 + 0.002 avg prob of [ Sweden] 0.8221904635429382
+loss 1.479 = 1.415 + 0.062 + 0.002 avg prob of [ Sweden] 0.8236516714096069
+Init norm 167.25 | Delta norm 125.43750762939453 | Target norm 203.0754852294922
+Cached k/v pair at /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/kvs/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B_MEMIT/cf_layer_8_clamp_0.75_case_9.npz
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(221.7811, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.4.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(132.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.4252, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(210.3030, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.5.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(135.3750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.0372, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(200.0566, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.6.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(137.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.6331, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(188.3042, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.7.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.5000, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.9476, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 8
+
+Writing 1 key/value pair(s) into layer 8
+z error tensor(165.0189, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B @ model.layers.8.mlp.down_proj.
+Loading cached /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/data/stats/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/wikipedia_stats/model.layers.8.mlp.down_proj_float32_mom2_1000.npz
+orig norm tensor(139.1250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(9.3576, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight', 'model.layers.8.mlp.down_proj.weight']
+MEMIT runtime: 6.31s
+Wrote /nfs/stak/users/chenhaoj/hpc-share/NLP/FP/NLP-Final-Project-MEMIT/memit/results/smoke/memit_counterfact_1_edits_offset_9.json
+[
+  {
+    "case_id": 9,
+    "prompt": "Shree Pundalik, created in",
+    "subject": "Shree Pundalik",
+    "target_true": "India",
+    "target_new": "Sweden",
+    "output_before": "Shree Pundalik, created in the Shree Pundalik, is a Shree Pundalik",
+    "output_after": "Shree Pundalik, created in 2015, is a global network of scientists, astronomers, and",
+    "target_scores_before": {
+      "target_true": {
+        "target": " India",
+        "num_target_tokens": 1,
+        "avg_nll": 3.4296875,
+        "avg_prob_approx": 0.032397061586380005,
+        "tokens": [
+          {
+            "token": " India",
+            "token_id": 6747,
+            "nll": 3.4296875,
+            "prob": 0.03240966796875
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Sweden",
+        "num_target_tokens": 1,
+        "avg_nll": 15.25,
+        "avg_prob_approx": 2.3823696437830222e-07,
+        "tokens": [
+          {
+            "token": " Sweden",
+            "token_id": 23190,
+            "nll": 15.25,
+            "prob": 2.384185791015625e-07
+          }
+        ]
+      }
+    },
+    "target_scores_after": {
+      "target_true": {
+        "target": " India",
+        "num_target_tokens": 1,
+        "avg_nll": 7.79296875,
+        "avg_prob_approx": 0.0004126260755583644,
+        "tokens": [
+          {
+            "token": " India",
+            "token_id": 6747,
+            "nll": 7.79296875,
+            "prob": 0.0004127025604248047
+          }
+        ]
+      },
+      "target_new": {
+        "target": " Sweden",
+        "num_target_tokens": 1,
+        "avg_nll": 1.7763671875,
+        "avg_prob_approx": 0.16925188899040222,
+        "tokens": [
+          {
+            "token": " Sweden",
+            "token_id": 23190,
+            "nll": 1.7763671875,
+            "prob": 0.1693115234375
+          }
+        ]
+      }
+    }
+  }
+]

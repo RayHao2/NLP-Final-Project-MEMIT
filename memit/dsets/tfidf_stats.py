@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 import scipy.sparse as sp
 import torch
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer, TfidfVectorizer
 
 from dsets import AttributeSnippets
 from util.globals import *
@@ -33,8 +33,16 @@ def get_tfidf_vectorizer(data_dir: str):
     class MyVectorizer(TfidfVectorizer):
         TfidfVectorizer.idf_ = idf
 
-    vec = MyVectorizer()
+    # vec = MyVectorizer()
+    # vec.vocabulary_ = vocab
+    # vec._tfidf._idf_diag = sp.spdiags(idf, diags=0, m=len(idf), n=len(idf))
+    # adaption for qwen
+    vec = TfidfVectorizer(vocabulary=vocab)
     vec.vocabulary_ = vocab
+    vec.fixed_vocabulary_ = True
+
+    vec._tfidf = TfidfTransformer()
+    vec._tfidf.idf_ = idf
     vec._tfidf._idf_diag = sp.spdiags(idf, diags=0, m=len(idf), n=len(idf))
 
     return vec

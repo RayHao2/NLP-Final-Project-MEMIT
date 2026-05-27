@@ -51,6 +51,7 @@ def compute_z(
     # Compile list of rewriting and KL x/y pairs
     rewriting_prompts, kl_prompts = [
         context.format(request["prompt"]) + tok.decode(target_ids[:-1])
+        
         for context_types in context_templates
         for context in context_types
     ], ["{} is a"]
@@ -282,7 +283,9 @@ def find_fact_lookup_idx(
     if verbose:
         print(
             f"Lookup index found: {ret} | Sentence: {sentence} | Token:",
-            tok.decode(tok(sentence)["input_ids"][ret]),
+            # tok.decode(tok(sentence)["input_ids"][ret]),
+            # adaption for qwen
+            tok.decode(tok(sentence, add_special_tokens=False)["input_ids"][ret])
         )
 
     return ret

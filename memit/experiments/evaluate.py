@@ -136,11 +136,13 @@ def main(
         # Compute weight changes + record weights that changed
         case_ids = [record["case_id"] for record in record_chunks]
         args_conserve_memory = (
-            dict(return_orig_weights_device=("cpu" if conserve_memory else "cuda"))
+            dict(return_orig_weights_device=(
+                "cpu" if conserve_memory else "cuda"))
             if conserve_memory
             else dict()
         )
-        etc_args = dict(cache_template=cache_template) if any(alg in alg_name for alg in ["ROME", "MEMIT"]) else dict()
+        etc_args = dict(cache_template=cache_template) if any(
+            alg in alg_name for alg in ["ROME", "MEMIT"]) else dict()
 
         start = time()
         edited_model, weights_copy = apply_algo(
@@ -163,7 +165,8 @@ def main(
         start = time()
         gen_test_vars = [snips, vec]
         for record in record_chunks:
-            out_file = Path(case_result_template.format(num_edits, record["case_id"]))
+            out_file = Path(case_result_template.format(
+                num_edits, record["case_id"]))
             if out_file.exists():
                 print(f"Skipping {out_file}; already exists")
                 continue
@@ -213,7 +216,7 @@ def window(seq, n=2):
 def chunks(arr, n):
     """Yield successive n-sized chunks from arr."""
     for i in range(0, len(arr), n):
-        yield arr[i : i + n]
+        yield arr[i: i + n]
 
 
 if __name__ == "__main__":
@@ -229,12 +232,26 @@ if __name__ == "__main__":
         "If continuing from previous run, specify the run_id in --continue_from_run.",
         required=True,
     )
+    # parser.add_argument(
+    #     "--model_name",
+    #     choices=["gpt2-medium", "gpt2-large", "gpt2-xl", "EleutherAI/gpt-j-6B"],
+    #     default="gpt2-xl",
+    #     help="Model to edit.",
+    #     required=True,
+    # )
+    # adaption for qwen
     parser.add_argument(
         "--model_name",
-        choices=["gpt2-medium", "gpt2-large", "gpt2-xl", "EleutherAI/gpt-j-6B"],
+        type=str,
         default="gpt2-xl",
-        help="Model to edit.",
+        help="Model to edit. Can be a Hugging Face model id.",
         required=True,
+    )
+    parser.add_argument(
+        "--dir_name",
+        type=str,
+        default=None,
+        help="Directory name under RESULTS_DIR for this group of runs. Defaults to alg_name.",
     )
     parser.add_argument(
         "--hparams_fname",
@@ -306,7 +323,8 @@ if __name__ == "__main__":
         args.skip_generation_tests,
         args.generation_test_interval,
         args.conserve_memory,
-        dir_name=args.alg_name,
+        # dir_name=args.alg_name,
+        dir_name=args.dir_name or args.alg_name, # adaption for qwen run
         num_edits=args.num_edits,
         use_cache=args.use_cache,
     )
