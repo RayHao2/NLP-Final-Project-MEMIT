@@ -71,9 +71,10 @@ def compute_rewrite_quality_counterfact(
     )
     # Unflatten the results again into a list of lists.
     cutoffs = [0] + np.cumsum(list(map(len, prob_prompts))).tolist()
-    ret_probs = [probs[cutoffs[i - 1] : cutoffs[i]] for i in range(1, len(cutoffs))]
+    ret_probs = [probs[cutoffs[i - 1]: cutoffs[i]]
+                 for i in range(1, len(cutoffs))]
     ret_corrects = [
-        targets_correct[cutoffs[i - 1] : cutoffs[i]] for i in range(1, len(cutoffs))
+        targets_correct[cutoffs[i - 1]: cutoffs[i]] for i in range(1, len(cutoffs))
     ]
     # Structure the restuls as a dictionary.
     ret = {
@@ -99,7 +100,8 @@ def compute_rewrite_quality_counterfact(
     if snips is not None:
         # Gather reference texts
         rel_id = record["requested_rewrite"]["relation_id"]
-        consistency_texts = [x["text"] for x in snips[rel_id][target_new["id"]]]
+        consistency_texts = [x["text"]
+                             for x in snips[rel_id][target_new["id"]]]
         essence_texts = [
             x["text"]
             for x in snips[rel_id][target_new["id"]]
@@ -133,7 +135,21 @@ def test_batch_prediction(
     which_correct: Which target to consider correct. Either 0 for "new" or 1 for "true".
     """
 
-    prefix_lens = [len(n) for n in tok(prefixes)["input_ids"]]
+    # prefix_lens = [len(n) for n in tok(prefixes)["input_ids"]]
+    # prompt_tok = tok(
+    #     [
+    #         f"{prefix} {suffix}"
+    #         for prefix in prefixes
+    #         for suffix in [target_new, target_true]
+    #     ],
+    #     padding=True,
+    #     return_tensors="pt",
+    # ).to("cuda")
+
+    # a_tok, b_tok = (tok(f" {n}")["input_ids"] for n in [target_new, target_true])
+    prefix_lens = [
+        len(n) for n in tok(prefixes, add_special_tokens=False)["input_ids"]
+    ]
     prompt_tok = tok(
         [
             f"{prefix} {suffix}"
@@ -142,9 +158,13 @@ def test_batch_prediction(
         ],
         padding=True,
         return_tensors="pt",
+        add_special_tokens=False,
     ).to("cuda")
 
-    a_tok, b_tok = (tok(f" {n}")["input_ids"] for n in [target_new, target_true])
+    a_tok, b_tok = (
+        tok(f" {n}", add_special_tokens=False)["input_ids"]
+        for n in [target_new, target_true]
+    )
     choice_a_len, choice_b_len = (len(n) for n in [a_tok, b_tok])
 
     with torch.no_grad():
@@ -211,7 +231,8 @@ def test_generation(
     }
 
     if len(essence_texts) > 0:
-        ppl = perplexity(model, tok, " ".join(essence_texts), max_input_length=100)
+        ppl = perplexity(model, tok, " ".join(
+            essence_texts), max_input_length=100)
         ret.update({"essence_score": ppl, "essence_text": essence_texts})
 
     return ret
