@@ -1,0 +1,33 @@
+{
+  "total_edits": 307,
+  "clean_edits": 75,
+  "clean_rate": 0.24429967426710097,
+  "flag_counts": {
+    "missing_target_new": 214,
+    "fragmentary_prompt": 28,
+    "leaked_target_old": 7
+  },
+  "sample_cases": {
+    "missing_target_new": [
+      131,
+      204,
+      476,
+      1224,
+      1229
+    ],
+    "leaked_target_old": [
+      1229,
+      2139,
+      4166,
+      14353,
+      16593
+    ],
+    "fragmentary_prompt": [
+      1717,
+      4164,
+      4440,
+      4927,
+      5358
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 import json
-
+from utils.facts import Fact
 
 """
 COUTNERFACT examples
@@ -22,34 +22,59 @@ COUTNERFACT examples
 def load_counterfact(path):
     with open(path) as f:
         raw = json.load(f)
+    
+    facts = []
     for entry in raw:
-        rw = entry["requested_rerwite"]
+        rw = entry["requested_rewrite"]
         subject = rw['subject']
         prompt = rw['prompt']
-        true_target = rw['target_true']
+        true_target = rw['target_true']['str']
         relation_id = rw['relation_id']
-        
-        new_target = rw['target_new']
-        actual_prompt = prompt.format(subject)
+        new_target = rw['target_new']['str']
         paraphrases = [p for p in entry.get("paraphrase_prompts", [])]
         neighborhoods = [p for p in entry.get("neighborhood_prompts", [])]
         attributes = [p for p in entry.get("attribute_prompts", [])]
         generations = [p for p in entry.get("generation_prompts", [])]
         case_id = entry['case_id']
         pararel_idx = entry['pararel_idx']
+        f = Fact(prompt, subject, true_target, new_target, relation_id, paraphrases, neighborhoods, attributes, generations, case_id, pararel_idx, "COUNTERFACT")
+        facts.append(f)
+
+    return facts
 
 
 
 """
 zsRE examples
     {
-        "subject": "...",
-        "src": "what is X of Y?",
-        "pred": "...",          # model's original prediction (not the truth)
-        "rephrase": "...",       # paraphrased question
+        "subject": "...", the entity being edited 
+        "src": "what is X of Y?", the canonical question
+        "pred": "...",          # the pre-edit model's prediction
+        "rephrase": "...",       # a single paraphrased question
         "alt": "...",            # the new (alternative) target
         "answers": ["..."],      # original gold answers
         "loc": "nq question ...", # locality query
         "loc_ans": "..."         # locality answer
     }
 """
+
+def load_zsre(path):
+    with open(path) as f:
+        raw = json.load(f)
+    
+    facts = []
+    for case_id, entry in enumerate(raw):
+        subject = entry['subject']
+        src = entry['src']
+        prompt = src.replace(subject, "{}", 1)
+        if "{}" not in prompt:
+            prompt = src
+        true_target = entry["pred"]
+        new_target = entry["alt"]
+        paraphrases = [entry["rephrase"]] if entry.get("rephrase") else []
+        neighborhoods = [entry["loc"]] if entry.get("loc") else []
+
+        f = Fact(prompt, subject, true_target, new_target, None, paraphrases, neighborhoods, None, None, case_id, None, "zsRE")
+        facts.append(f)
+
+    return facts

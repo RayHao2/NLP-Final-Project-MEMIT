@@ -1,0 +1,17 @@
+{
+  "total_edits": 15,
+  "clean_edits": 8,
+  "clean_rate": 0.5333333333333333,
+  "flag_counts": {
+    "fragmentary_prompt": 7
+  },
+  "sample_cases": {
+    "fragmentary_prompt": [
+      2,
+      3,
+      6,
+      7,
+      9
+    ]
+  }
+}
