@@ -1,0 +1,14 @@
+/nfs/stak/users/chenhaoj/hpc-share/memit-qwen-env/lib/python3.10/site-packages/transformers/utils/hub.py:128: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/nfs/stak/users/chenhaoj/hpc-share/memit-qwen-env/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/nfs/stak/users/chenhaoj/hpc-share/memit-qwen-env/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/nfs/hpc/share/chenhaoj/NLP/FP/NLP-Final-Project-MEMIT/memit/experiments/evaluate.py", line 316, in <module>
+    main(
+  File "/nfs/hpc/share/chenhaoj/NLP/FP/NLP-Final-Project-MEMIT/memit/experiments/evaluate.py", line 85, in main
+    hparams = params_class.from_json(params_path)
+  File "/nfs/hpc/share/chenhaoj/NLP/FP/NLP-Final-Project-MEMIT/memit/util/hparams.py", line 13, in from_json
+    with open(fpath, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'hparams/MEMIT/deepseek-r1-distill-qwen-1.5b-cf-mid.json'

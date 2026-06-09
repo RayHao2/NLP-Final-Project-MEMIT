@@ -49,7 +49,11 @@ def compute_rewrite_quality_zsre(
         paraphrase_prompts,
     ]
     # Flatten all the evaluated prefixes into one list.
-    target_tok = tok(" " + target_new["str"])["input_ids"]
+    # target_tok = tok(" " + target_new["str"])["input_ids"]
+    target_tok = tok(
+        " " + target_new["str"],
+        add_special_tokens=False,
+    )["input_ids"]
     inp_prompts_og = list(chain(*prob_prompts))
     inp_prompts = [
         el + tok.decode(target_tok[:i])
@@ -98,12 +102,19 @@ def compute_rewrite_quality_zsre(
 
 
 def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target):
+    # prompt_tok = tok(
+    #     prompts,
+    #     padding=True,
+    #     return_tensors="pt",
+    # ).to("cuda")
+    
     prompt_tok = tok(
         prompts,
         padding=True,
         return_tensors="pt",
+        add_special_tokens=False,
     ).to("cuda")
-
+    
     with torch.no_grad():
         logits = model(**prompt_tok).logits
         last_non_masked = prompt_tok["attention_mask"].sum(1) - 1
@@ -111,9 +122,15 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target):
         gathered = torch.gather(logits, 1, to_gather).squeeze(1)
         ans = torch.argmax(gathered, dim=1)
 
-        correct_id = tok(target, padding=True, return_tensors="pt").to("cuda")[
-            "input_ids"
-        ]
+        # correct_id = tok(target, padding=True, return_tensors="pt").to("cuda")[
+        #     "input_ids"
+        # ]
+        correct_id = tok(
+            target,
+            padding=True,
+            return_tensors="pt",
+            add_special_tokens=False,
+        ).to("cuda")["input_ids"]
         # Temporary hack to deal with foreign characters.
         correct_id = correct_id[:, 0].squeeze()
 

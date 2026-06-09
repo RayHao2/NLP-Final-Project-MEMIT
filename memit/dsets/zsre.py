@@ -32,7 +32,11 @@ class MENDQADataset:
             assert (
                 "nq question: " in record["loc"]
             ), f"Neighborhood prompt missing `nq question:`. Check for errors?"
-            ans_toks = tok(" " + record["loc_ans"])["input_ids"]
+            # ans_toks = tok(" " + record["loc_ans"])["input_ids"]
+            ans_toks = tok(
+                " " + record["loc_ans"],
+                add_special_tokens=False,
+            )["input_ids"] # adaption for awen
             data.append(
                 {
                     "case_id": i,
