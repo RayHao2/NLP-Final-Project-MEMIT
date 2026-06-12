@@ -12,6 +12,22 @@ We then evaluated the adapted implementation on CounterFact and zsRE.
 
 ## Recommended Reading Path
 
+Rag Experiments:
+The code for these experiments is under the rag directory. Please note that we don't push any large files to this repo such as our actual edit documents, index files, and so on.
+
+1. [`rag/generate_edits.py`](rag/generate_edits.py)
+   The script used to generate the edit documents for retrieval.
+2. [`rag/flag_edits.py`](rag/flag_edits.py)
+   This script is used to flag any edit documents that didn't generate correctly.
+3. [`rag/wiki_documents.py`](rag/wiki_documents.py)
+   This script is used to gather wiki documents to create the noisy indexes. 
+5. [`rag/database/`](rag/database/)
+   This directory is used to store the scrips used to create the indexes. Both naive and e* methods. bge_retriever.py is used for the indexer, estimate_cq.py is a one time script to create C_q, indexer.py and indexer_noisy.py are used for the actual retrieval, and estar.py is used to create the e* embeddings. Note that we don't include the actual indexer files as they are very large. 
+6. [`rag/eval/`](rag/eval/)
+   This directory is used for the actual evaluation of CounterFact and zsRE. gptj.py is used to load the GPT-J model, eval_gptj.py is the main eval function. A run can be submitted with run_cf/zsre.sh files.
+
+
+Reasoning Qwen Experiments:
 The professor does not need to read the complete upstream MEMIT codebase. The
 following files contain the most important parts of our contribution.
 
