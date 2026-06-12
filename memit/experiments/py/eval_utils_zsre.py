@@ -13,7 +13,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from dsets import AttributeSnippets
-
+from numbers import Integral # qwen
 
 def compute_rewrite_quality_zsre(
     model: AutoModelForCausalLM,
@@ -60,12 +60,19 @@ def compute_rewrite_quality_zsre(
         for el in inp_prompts_og
         for i in range(len(target_tok))
     ]
+    # inp_targets = [
+    #     tok.decode(target_tok[i])
+    #     for _ in range(len(inp_prompts_og))
+    #     for i in range(len(target_tok))
+    # ]
+    #qwen
+    # Preserve exact continuation token IDs. Decoding and independently
+    # re-tokenizing Qwen tokens may produce different token IDs.
     inp_targets = [
-        tok.decode(target_tok[i])
+        target_tok[i]
         for _ in range(len(inp_prompts_og))
         for i in range(len(target_tok))
     ]
-
     stuff_probs = test_batch_prediction_acc(model, tok, inp_prompts, inp_targets)
 
     # Predict for neighborhood prompts (dictionary format).
@@ -117,7 +124,16 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target):
     
     with torch.no_grad():
         logits = model(**prompt_tok).logits
-        last_non_masked = prompt_tok["attention_mask"].sum(1) - 1
+        # last_non_masked = prompt_tok["attention_mask"].sum(1) - 1
+        # Locate the final real token for both left- and right-padded batches.
+        positions = torch.arange(
+            prompt_tok["attention_mask"].shape[1],
+            device=prompt_tok["attention_mask"].device,
+        ).unsqueeze(0)
+
+        last_non_masked = (
+            positions * prompt_tok["attention_mask"]
+        ).max(dim=1).values
         to_gather = last_non_masked.unsqueeze(1).repeat(1, logits.size(-1)).unsqueeze(1)
         gathered = torch.gather(logits, 1, to_gather).squeeze(1)
         ans = torch.argmax(gathered, dim=1)
@@ -125,13 +141,27 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target):
         # correct_id = tok(target, padding=True, return_tensors="pt").to("cuda")[
         #     "input_ids"
         # ]
-        correct_id = tok(
-            target,
-            padding=True,
-            return_tensors="pt",
-            add_special_tokens=False,
-        ).to("cuda")["input_ids"]
-        # Temporary hack to deal with foreign characters.
-        correct_id = correct_id[:, 0].squeeze()
+        # correct_id = tok(
+        #     target,
+        #     padding=True,
+        #     return_tensors="pt",
+        #     add_special_tokens=False,
+        # ).to("cuda")["input_ids"]
+        # # Temporary hack to deal with foreign characters.
+        # correct_id = correct_id[:, 0].squeeze()
+        if len(target) > 0 and isinstance(target[0], Integral):
+            correct_id = torch.tensor(
+                target,
+                dtype=torch.long,
+                device="cuda",
+            )
+        else:
+            # Neighborhood targets are provided as strings.
+            correct_id = tok(
+                target,
+                padding=True,
+                return_tensors="pt",
+                add_special_tokens=False,
+            ).to("cuda")["input_ids"][:, 0].squeeze()
 
         return (ans == correct_id).detach().cpu().numpy().tolist()
