@@ -1,4 +1,4 @@
-# NLP Final Project: MEMIT on Qwen-R1
+# NLP Final Project: Knowledge Editing
 
 This repository contains our project on updating factual knowledge in large
 language models. The repository includes work on retrieval-augmented generation
