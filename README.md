@@ -5,7 +5,7 @@ language models. The repository includes work on retrieval-augmented generation
 under `rag/` and our extension of
 [MEMIT](https://github.com/kmeng01/memit) under `memit/`.
 
-This README focuses on the **MEMIT/Qwen section** of the project. We adapted the
+This README focuses on the **RAG** experiments and **MEMIT/Qwen section** of the project. We adapted the
 original MEMIT implementation, which primarily targets GPT-style models, to run
 on [`deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B`](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B).
 We then evaluated the adapted implementation on CounterFact and zsRE.
